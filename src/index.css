@@ -17,7 +17,7 @@
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 190 100% 50%;
+    --primary: 45 100% 55%;
     --primary-foreground: 0 0% 4%;
 
     --secondary: 0 0% 12%;
@@ -26,7 +26,7 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 190 100% 50%;
+    --accent: 45 100% 55%;
     --accent-foreground: 0 0% 4%;
 
     --destructive: 0 84.2% 60.2%;
@@ -34,14 +34,14 @@
 
     --border: 0 0% 20%;
     --input: 0 0% 15%;
-    --ring: 190 100% 50%;
+    --ring: 45 100% 55%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
     --font-mono: 'JetBrains Mono', monospace;
-    --gradient-accent: linear-gradient(135deg, hsl(190 100% 50%) 0%, hsl(200 100% 60%) 100%);
-    --glow-accent: 0 0 40px hsl(190 100% 50% / 0.3);
+    --gradient-accent: linear-gradient(135deg, hsl(45 100% 55%) 0%, hsl(35 100% 50%) 100%);
+    --glow-accent: 0 0 40px hsl(45 100% 55% / 0.3);
   }
 
   .dark {
@@ -51,19 +51,19 @@
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
-    --primary: 190 100% 50%;
+    --primary: 45 100% 55%;
     --primary-foreground: 0 0% 4%;
     --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
-    --accent: 190 100% 50%;
+    --accent: 45 100% 55%;
     --accent-foreground: 0 0% 4%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
     --border: 0 0% 20%;
     --input: 0 0% 15%;
-    --ring: 190 100% 50%;
+    --ring: 45 100% 55%;
   }
 }
 
