@@ -16,7 +16,7 @@ const ContactSection = () => {
         <div className="arc-decoration w-[500px] h-[500px] -right-[250px] -bottom-[250px] opacity-20" />
 
         {/* Dashed border decorations */}
-        <div className="absolute top-8 left-8 right-8 bottom-8 border border-dashed border-primary/20 rounded-3xl" />
+        <div className="absolute top-8 left-8 right-8 bottom-8 border border-dashed border-border rounded-3xl" />
       </div>
 
       <div className="max-w-4xl mx-auto text-center relative z-10">
