@@ -42,7 +42,7 @@
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 98%;
+    --primary: 190 100% 50%;
     --primary-foreground: 0 0% 4%;
 
     --secondary: 0 0% 12%;
@@ -51,25 +51,22 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
 
-    --accent: 0 0% 98%;
+    --accent: 190 100% 50%;
     --accent-foreground: 0 0% 4%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 20%;
+    --border: 0 0% 25%;
     --input: 0 0% 15%;
-    --ring: 0 0% 98%;
+    --ring: 190 100% 50%;
 
     --radius: 0.75rem;
 
     /* Custom tokens */
-    --font-heading: 'Fira Code', monospace;
-    --font-title: 'Open Sans', sans-serif;
-    --font-body: 'Open Sans', sans-serif;
-    --font-mono: 'Fira Code', monospace;
-    --gradient-accent: linear-gradient(135deg, hsl(0 0% 98%) 0%, hsl(0 0% 80%) 100%);
-    --glow-accent: 0 0 40px hsl(0 0% 98% / 0.3);
+    --font-mono: 'JetBrains Mono', monospace;
+    --gradient-accent: linear-gradient(135deg, hsl(190 100% 50%) 0%, hsl(200 100% 60%) 100%);
+    --glow-accent: 0 0 40px hsl(190 100% 50% / 0.3);
   }
 
   .dark {
@@ -79,19 +76,19 @@
     --card-foreground: 0 0% 98%;
     --popover: 0 0% 8%;
     --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
+    --primary: 190 100% 50%;
     --primary-foreground: 0 0% 4%;
     --secondary: 0 0% 12%;
     --secondary-foreground: 0 0% 98%;
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 60%;
-    --accent: 0 0% 98%;
+    --accent: 190 100% 50%;
     --accent-foreground: 0 0% 4%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 20%;
+    --border: 0 0% 25%;
     --input: 0 0% 15%;
-    --ring: 0 0% 98%;
+    --ring: 190 100% 50%;
   }
 }
 
