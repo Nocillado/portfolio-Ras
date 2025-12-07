@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { ImageWithSkeleton } from "./ui/image-skeleton";
 
 const AboutSection = () => {
   const images = ["/DP/kekw.jpg", "/DP/2.jpg"];
@@ -40,13 +41,15 @@ const AboutSection = () => {
                   />
                 </svg>
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <img
-                    key={currentImage}
-                    src={images[currentImage]}
-                    alt="Profile"
-                    className="w-[85%] h-[85%] rounded-full object-cover animate-fade-in"
-                    loading="lazy"
-                  />
+                  <div className="w-[85%] h-[85%] rounded-full overflow-hidden relative">
+                    <ImageWithSkeleton
+                      key={currentImage}
+                      src={images[currentImage]}
+                      alt="Profile"
+                      className="w-full h-full object-cover animate-fade-in"
+                      skeletonClassName="rounded-full"
+                    />
+                  </div>
                 </div>
               </div>
             </div>

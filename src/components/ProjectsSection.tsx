@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, MessageSquare } from "lucide-react";
 import { Button } from "./ui/button";
+import { ImageWithSkeleton } from "./ui/image-skeleton";
 
 const projects = [
   {
@@ -46,9 +47,9 @@ const ProjectsSection = () => {
             >
               {/* Project image */}
               <div className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
-                <div className="aspect-[4/3] rounded-2xl bg-card border border-border overflow-hidden">
+                <div className="aspect-[4/3] rounded-2xl bg-card border border-border overflow-hidden relative">
                   {project.image ? (
-                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" loading="lazy" />
+                    <ImageWithSkeleton src={project.image} alt={project.title} className="w-full h-full object-cover" />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-card to-muted" />
                   )}
