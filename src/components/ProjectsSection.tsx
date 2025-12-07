@@ -8,21 +8,21 @@ const projects = [
     title: "Resident Evil 8",
     tags: ["React", "Tailwind CSS", "ShadCN"],
     image: "/Projects/3.png",
-    link: "https://re-8.netlify.app/",
+    link: "https://resident-evil-8-one.vercel.app/",
     description: "A fan-made tribute website dedicated to Resident Evil Village. Features an immersive dark atmosphere with cinematic visuals, character showcases, and game information that captures the horror essence of the iconic franchise.",
   },
   {
     title: "Montclair",
     tags: ["React", "Tailwind CSS", "ShadCN"],
     image: "/Projects/1.png",
-    link: "https://montclair-ras.netlify.app/",
+    link: "https://montclair-jet.vercel.app/",
     description: "A luxury web store showcasing premium timepieces with an elegant, minimalist design. Features smooth animations and a refined user experience tailored for high-end watch enthusiasts.",
   },
   {
     title: "Steel Stallion",
     tags: ["React", "Tailwind CSS", "ShadCN"],
     image: "/Projects/2.png",
-    link: "https://steelstallion.netlify.app/",
+    link: "https://steel-stallion.vercel.app/",
     description: "A vintage motorcycle showcase featuring classic bikes with a rugged, nostalgic aesthetic. Built with smooth transitions and a bold design that captures the spirit of timeless two-wheeled machines.",
   },
   {
@@ -36,7 +36,7 @@ const projects = [
     title: "Brussels Brewery",
     tags: ["React", "Tailwind CSS", "ShadCN"],
     image: "/Projects/5 .png",
-    link: "#",
+    link: "https://brussels-brewery.vercel.app/",
     description: "A cozy coffee shop website inspired by Brussels Brewery. Features an inviting warm aesthetic, menu showcases, and store information that captures the artisanal coffee culture and European café ambiance.",
   },
 ];
@@ -68,6 +68,15 @@ const ProjectsSection = () => {
             >
               {/* Project image */}
               <div className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
+                {/* Decorative arc - behind the image */}
+                <div
+                  className={`absolute pointer-events-none w-[400px] h-[400px] ${
+                    index % 2 === 0
+                      ? "-bottom-[200px] -left-[200px]"
+                      : "-top-[200px] -right-[200px]"
+                  } opacity-20 border border-border rounded-full`}
+                />
+
                 <div className="aspect-[4/3] rounded-2xl bg-card border border-border overflow-hidden relative">
                   {project.image ? (
                     <ImageWithSkeleton src={project.image} alt={project.title} className="w-full h-full object-cover" />
@@ -75,15 +84,6 @@ const ProjectsSection = () => {
                     <div className="w-full h-full bg-gradient-to-br from-card to-muted" />
                   )}
                 </div>
-                
-                {/* Decorative arc */}
-                <div
-                  className={`arc-decoration w-[400px] h-[400px] ${
-                    index % 2 === 0
-                      ? "-bottom-[200px] -left-[200px]"
-                      : "-top-[200px] -right-[200px]"
-                  } opacity-20`}
-                />
               </div>
 
               {/* Project info */}

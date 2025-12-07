@@ -5,11 +5,11 @@ import { ImageWithSkeleton } from "./ui/image-skeleton";
 import { useState, useEffect } from "react";
 
 const heroProjects = [
-  { title: "Resident Evil 8", image: "/Projects/3.png", link: "https://re-8.netlify.app/" },
-  { title: "Montclair", image: "/Projects/1.png", link: "https://montclair-ras.netlify.app/" },
-  { title: "Steel Stallion", image: "/Projects/2.png", link: "https://steelstallion.netlify.app/" },
+  { title: "Resident Evil 8", image: "/Projects/3.png", link: "https://resident-evil-8-one.vercel.app/" },
+  { title: "Montclair", image: "/Projects/1.png", link: "https://montclair-jet.vercel.app/" },
+  { title: "Steel Stallion", image: "/Projects/2.png", link: "https://steel-stallion.vercel.app/" },
   { title: "Marilag", image: "/Projects/4.png", link: "https://marilag-eta.vercel.app/" },
-  { title: "Brussels Brewery", image: "/Projects/5 .png", link: "#" },
+  { title: "Brussels Brewery", image: "/Projects/5 .png", link: "https://brussels-brewery.vercel.app/" },
 ];
 
 const HeroSection = () => {
@@ -53,6 +53,29 @@ const HeroSection = () => {
               Front-End
             </motion.h1>
 
+            {/* Developer/Designer - shown on mobile below Front-End */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex lg:hidden items-center gap-2 mt-2"
+            >
+              <div className="h-[1.5em] text-5xl sm:text-6xl md:text-8xl overflow-hidden relative pb-4">
+                <AnimatePresence mode="wait">
+                  <motion.span
+                    key={roles[currentIndex]}
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    exit={{ y: -50, opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="font-mono font-medium leading-none tracking-tight"
+                  >
+                    {roles[currentIndex]}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
+            </motion.div>
+
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
@@ -63,7 +86,7 @@ const HeroSection = () => {
             </motion.p>
           </div>
 
-          <div className="flex flex-col items-start lg:items-end gap-8">
+          <div className="hidden lg:flex flex-col items-end gap-8">
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
@@ -100,14 +123,32 @@ const HeroSection = () => {
               </div>
             </motion.div>
           </div>
+
+          {/* Projects button - shown on mobile */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex lg:hidden items-center gap-4"
+          >
+            <Button variant="hero" size="lg" className="group" asChild>
+              <a href="#projects">
+                Projects
+                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+              </a>
+            </Button>
+          </motion.div>
         </div>
+
+        {/* Decorative arc - behind content */}
+        <div className="absolute pointer-events-none w-[600px] h-[600px] -bottom-[300px] -left-[300px] opacity-30 border border-border rounded-full" />
 
         {/* Project Cards Preview */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-16"
+          className="mt-16 relative z-10"
         >
           <div className="relative">
             <AnimatePresence mode="wait">
@@ -177,9 +218,6 @@ const HeroSection = () => {
           </div>
         </motion.div>
       </div>
-
-      {/* Decorative arc */}
-      <div className="arc-decoration w-[600px] h-[600px] -bottom-[300px] -left-[300px] opacity-30" />
     </section>
   );
 };
