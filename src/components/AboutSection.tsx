@@ -45,6 +45,7 @@ const AboutSection = () => {
                     src={images[currentImage]}
                     alt="Profile"
                     className="w-[85%] h-[85%] rounded-full object-cover animate-fade-in"
+                    loading="lazy"
                   />
                 </div>
               </div>

@@ -91,7 +91,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="aspect-[4/3] rounded-2xl bg-card border border-border hover:border-muted-foreground/30 transition-all duration-300 relative overflow-hidden group hover:scale-[1.02] hover:shadow-lg"
           >
-            <img src="/projects/1.png" alt="Montclair" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <img src="/Projects/1.png" alt="Montclair" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
             <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <span className="font-mono text-sm text-white bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full">Montclair</span>
@@ -105,7 +105,7 @@ const HeroSection = () => {
             rel="noopener noreferrer"
             className="aspect-[4/3] rounded-2xl bg-card border border-border hover:border-muted-foreground/30 transition-all duration-300 relative overflow-hidden group hover:scale-[1.02] hover:shadow-lg"
           >
-            <img src="/projects/2.png" alt="Steel Stallion" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+            <img src="/Projects/2.png" alt="Steel Stallion" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy" />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
             <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
               <span className="font-mono text-sm text-white bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full">Steel Stallion</span>

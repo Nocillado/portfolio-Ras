@@ -6,14 +6,14 @@ const projects = [
   {
     title: "Montclair",
     tags: ["React", "Tailwind CSS", "ShadCN"],
-    image: "/projects/1.png",
+    image: "/Projects/1.png",
     link: "https://montclair-ras.netlify.app/",
     description: "A luxury web store showcasing premium timepieces with an elegant, minimalist design. Features smooth animations and a refined user experience tailored for high-end watch enthusiasts.",
   },
   {
     title: "Steel Stallion",
     tags: ["React", "Tailwind CSS", "ShadCN"],
-    image: "/projects/2.png",
+    image: "/Projects/2.png",
     link: "https://steelstallion.netlify.app/",
     description: "A vintage motorcycle showcase featuring classic bikes with a rugged, nostalgic aesthetic. Built with smooth transitions and a bold design that captures the spirit of timeless two-wheeled machines.",
   },
@@ -48,7 +48,7 @@ const ProjectsSection = () => {
               <div className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                 <div className="aspect-[4/3] rounded-2xl bg-card border border-border overflow-hidden">
                   {project.image ? (
-                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" loading="lazy" />
                   ) : (
                     <div className="w-full h-full bg-gradient-to-br from-card to-muted" />
                   )}
@@ -81,17 +81,9 @@ const ProjectsSection = () => {
 
                 {/* Description */}
                 <div className="space-y-4">
-                  {project.description ? (
-                    <p className="text-sm text-muted-foreground">
-                      {project.description}
-                    </p>
-                  ) : project.descriptions ? (
-                    project.descriptions.map((desc, i) => (
-                      <p key={i} className="text-sm text-muted-foreground">
-                        {desc}
-                      </p>
-                    ))
-                  ) : null}
+                  <p className="text-sm text-muted-foreground">
+                    {project.description}
+                  </p>
                 </div>
 
                 {/* Action buttons */}
