@@ -1,73 +1,104 @@
-# Welcome to your Lovable project
+# Ras Portfolio
 
-## Project info
+A modern, responsive portfolio website for Christian Mark (Ras), a Front-End Developer specializing in creating beautiful, intuitive web applications.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+## Live Demo
 
-## How can I edit this code?
+Visit the live site: [Portfolio](https://your-portfolio-url.netlify.app)
 
-There are several ways of editing your application.
+## Features
 
-**Use Lovable**
+- Responsive design with mobile-first approach
+- Smooth animations powered by Framer Motion
+- Dark theme with elegant UI
+- Lazy loading images with skeleton placeholders
+- Mobile hamburger navigation menu
+- Project showcase with hover effects
+- Contact section with social links
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+## Sections
 
-Changes made via Lovable will be committed automatically to this repo.
+- **Hero** - Introduction with animated role text
+- **About** - Personal introduction with rotating profile images
+- **Skills** - Technical skills showcase
+- **Projects** - Featured projects (Montclair, Steel Stallion)
+- **Work** - Work experience
+- **Contact** - Get in touch with email and social links
 
-**Use your preferred IDE**
+## Tech Stack
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **React 18** - UI library
+- **TypeScript** - Type safety
+- **Vite** - Build tool and dev server
+- **Tailwind CSS** - Utility-first styling
+- **Framer Motion** - Animations
+- **ShadCN UI** - Component library
+- **Lucide React** - Icons
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Fonts
 
-Follow these steps:
+- **Fira Code SemiBold** - Headings and monospace text
+- **Open Sans Light/SemiBold** - Body text and navigation
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+## Getting Started
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Prerequisites
 
-# Step 3: Install the necessary dependencies.
-npm i
+- Node.js 18+
+- npm or yarn
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+### Installation
+
+```bash
+# Clone the repository
+git clone https://github.com/Nocillado/portfolio.git
+
+# Navigate to project directory
+cd portfolio
+
+# Install dependencies
+npm install
+
+# Start development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+### Build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+# Build for production
+npm run build
 
-**Use GitHub Codespaces**
+# Preview production build
+npm run preview
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Project Structure
 
-## What technologies are used for this project?
+```
+src/
+├── components/
+│   ├── ui/              # ShadCN UI components
+│   ├── Navigation.tsx   # Header navigation
+│   ├── HeroSection.tsx  # Hero section
+│   ├── AboutSection.tsx # About me section
+│   ├── SkillsSection.tsx# Skills section
+│   ├── ProjectsSection.tsx # Projects showcase
+│   ├── WorkSection.tsx  # Work experience
+│   └── ContactSection.tsx  # Contact section
+├── pages/
+│   └── Index.tsx        # Main page
+├── hooks/               # Custom React hooks
+├── lib/                 # Utility functions
+└── index.css           # Global styles
+```
 
-This project is built with:
+## License
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+MIT License - feel free to use this as a template for your own portfolio.
 
-## How can I deploy this project?
+## Contact
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+- **Email**: christianmarknocillado03@gmail.com
+- **LinkedIn**: [nocillado](https://www.linkedin.com/in/nocillado)
+- **GitHub**: [Nocillado](https://github.com/Nocillado)
