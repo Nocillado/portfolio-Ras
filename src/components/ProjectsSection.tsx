@@ -4,31 +4,18 @@ import { Button } from "./ui/button";
 
 const projects = [
   {
-    title: "E-Commerce Platform",
-    tags: ["React", "Node.js", "PostgreSQL", "Stripe", "AWS", "Docker"],
-    descriptions: [
-      "Built a full-stack e-commerce solution with real-time inventory management",
-      "Implemented secure payment processing with Stripe integration",
-      "Deployed using AWS ECS with auto-scaling capabilities",
-    ],
+    title: "Montclair",
+    tags: ["React", "Tailwind CSS", "ShadCN"],
+    image: "/projects/1.png",
+    link: "https://montclair-ras.netlify.app/",
+    description: "A luxury web store showcasing premium timepieces with an elegant, minimalist design. Features smooth animations and a refined user experience tailored for high-end watch enthusiasts.",
   },
   {
-    title: "Dashboard Analytics",
-    tags: ["Vue.js", "D3.js", "GraphQL", "MongoDB", "Redis", "Docker"],
-    descriptions: [
-      "Created interactive data visualization dashboards",
-      "Real-time data streaming with WebSocket connections",
-      "Optimized queries for handling millions of data points",
-    ],
-  },
-  {
-    title: "Mobile Banking App",
-    tags: ["React Native", "TypeScript", "Node.js", "PostgreSQL", "Redis", "AWS"],
-    descriptions: [
-      "Developed secure mobile banking application",
-      "Implemented biometric authentication and 2FA",
-      "Built transaction processing with real-time notifications",
-    ],
+    title: "Steel Stallion",
+    tags: ["React", "Tailwind CSS", "ShadCN"],
+    image: "/projects/2.png",
+    link: "https://steelstallion.netlify.app/",
+    description: "A vintage motorcycle showcase featuring classic bikes with a rugged, nostalgic aesthetic. Built with smooth transitions and a bold design that captures the spirit of timeless two-wheeled machines.",
   },
 ];
 
@@ -60,7 +47,11 @@ const ProjectsSection = () => {
               {/* Project image */}
               <div className={`relative ${index % 2 === 1 ? "lg:order-2" : ""}`}>
                 <div className="aspect-[4/3] rounded-2xl bg-card border border-border overflow-hidden">
-                  <div className="w-full h-full bg-gradient-to-br from-card to-muted" />
+                  {project.image ? (
+                    <img src={project.image} alt={project.title} className="w-full h-full object-cover" />
+                  ) : (
+                    <div className="w-full h-full bg-gradient-to-br from-card to-muted" />
+                  )}
                 </div>
                 
                 {/* Decorative arc */}
@@ -88,25 +79,31 @@ const ProjectsSection = () => {
                   ))}
                 </div>
 
-                {/* Descriptions */}
+                {/* Description */}
                 <div className="space-y-4">
-                  {project.descriptions.map((desc, i) => (
-                    <p key={i} className="text-sm text-muted-foreground">
-                      Some of my favorite{" "}
-                      <span className="text-foreground italic">technologies, topics, or tools</span>{" "}
-                      that I worked with
+                  {project.description ? (
+                    <p className="text-sm text-muted-foreground">
+                      {project.description}
                     </p>
-                  ))}
+                  ) : project.descriptions ? (
+                    project.descriptions.map((desc, i) => (
+                      <p key={i} className="text-sm text-muted-foreground">
+                        {desc}
+                      </p>
+                    ))
+                  ) : null}
                 </div>
 
                 {/* Action buttons */}
                 <div className="flex items-center gap-2 mt-8">
-                  <button className="w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:bg-secondary transition-colors">
+                  <a href="#contact" className="w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:bg-secondary transition-colors">
                     <MessageSquare className="w-4 h-4" />
-                  </button>
-                  <button className="w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:bg-secondary transition-colors">
-                    <ArrowUpRight className="w-4 h-4" />
-                  </button>
+                  </a>
+                  {project.link && (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:bg-secondary transition-colors">
+                      <ArrowUpRight className="w-4 h-4" />
+                    </a>
+                  )}
                 </div>
               </div>
             </motion.div>

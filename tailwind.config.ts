@@ -55,6 +55,9 @@ export default {
       },
       fontFamily: {
         mono: ["var(--font-mono)", "monospace"],
+        heading: ["var(--font-heading)", "monospace"],
+        title: ["var(--font-title)", "sans-serif"],
+        body: ["var(--font-body)", "sans-serif"],
       },
       keyframes: {
         "accordion-down": {

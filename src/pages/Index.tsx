@@ -23,7 +23,7 @@ const Index = () => {
       <footer className="py-8 px-6 md:px-12 border-t border-border">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="font-mono text-sm text-muted-foreground">
-            © 2024 RasgeL. All rights reserved.
+            © 2025 Ras. All rights reserved.
           </p>
           <p className="text-sm text-muted-foreground">
             Built with passion and coffee
