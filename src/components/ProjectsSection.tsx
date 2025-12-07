@@ -5,6 +5,13 @@ import { ImageWithSkeleton } from "./ui/image-skeleton";
 
 const projects = [
   {
+    title: "Resident Evil 8",
+    tags: ["React", "Tailwind CSS", "ShadCN"],
+    image: "/Projects/3.png",
+    link: "https://re-8.netlify.app/",
+    description: "A fan-made tribute website dedicated to Resident Evil Village. Features an immersive dark atmosphere with cinematic visuals, character showcases, and game information that captures the horror essence of the iconic franchise.",
+  },
+  {
     title: "Montclair",
     tags: ["React", "Tailwind CSS", "ShadCN"],
     image: "/Projects/1.png",
@@ -17,6 +24,20 @@ const projects = [
     image: "/Projects/2.png",
     link: "https://steelstallion.netlify.app/",
     description: "A vintage motorcycle showcase featuring classic bikes with a rugged, nostalgic aesthetic. Built with smooth transitions and a bold design that captures the spirit of timeless two-wheeled machines.",
+  },
+  {
+    title: "Marilag",
+    tags: ["React", "Tailwind CSS", "ShadCN"],
+    image: "/Projects/4.png",
+    link: "https://marilag-eta.vercel.app/",
+    description: "A stunning travel website showcasing the beauty of Boracay. Features breathtaking imagery, destination guides, and booking information designed to inspire wanderlust and help travelers plan their perfect island getaway.",
+  },
+  {
+    title: "Brussels Brewery",
+    tags: ["React", "Tailwind CSS", "ShadCN"],
+    image: "/Projects/5 .png",
+    link: "#",
+    description: "A cozy coffee shop website inspired by Brussels Brewery. Features an inviting warm aesthetic, menu showcases, and store information that captures the artisanal coffee culture and European café ambiance.",
   },
 ];
 

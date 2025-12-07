@@ -1,12 +1,36 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "./ui/button";
 import { ImageWithSkeleton } from "./ui/image-skeleton";
 import { useState, useEffect } from "react";
 
+const heroProjects = [
+  { title: "Resident Evil 8", image: "/Projects/3.png", link: "https://re-8.netlify.app/" },
+  { title: "Montclair", image: "/Projects/1.png", link: "https://montclair-ras.netlify.app/" },
+  { title: "Steel Stallion", image: "/Projects/2.png", link: "https://steelstallion.netlify.app/" },
+  { title: "Marilag", image: "/Projects/4.png", link: "https://marilag-eta.vercel.app/" },
+  { title: "Brussels Brewery", image: "/Projects/5 .png", link: "#" },
+];
+
 const HeroSection = () => {
   const roles = ["Developer", "Designer"];
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [projectPage, setProjectPage] = useState(0);
+
+  const projectsPerPage = 3;
+  const totalPages = Math.ceil(heroProjects.length / projectsPerPage);
+  const visibleProjects = heroProjects.slice(
+    projectPage * projectsPerPage,
+    projectPage * projectsPerPage + projectsPerPage
+  );
+
+  const nextPage = () => {
+    setProjectPage((prev) => (prev + 1) % totalPages);
+  };
+
+  const prevPage = () => {
+    setProjectPage((prev) => (prev - 1 + totalPages) % totalPages);
+  };
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -83,48 +107,74 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.7 }}
-          className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-4"
+          className="mt-16"
         >
-          {/* Montclair */}
-          <a
-            href="https://montclair-ras.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="aspect-[4/3] rounded-2xl bg-card border border-border hover:border-muted-foreground/30 transition-all duration-300 relative overflow-hidden group hover:scale-[1.02] hover:shadow-lg"
-          >
-            <ImageWithSkeleton src="/Projects/1.png" alt="Montclair" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-            <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span className="font-mono text-sm text-white bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full">Montclair</span>
-            </div>
-          </a>
+          <div className="relative">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={projectPage}
+                initial={{ opacity: 0, x: 20 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -20 }}
+                transition={{ duration: 0.3 }}
+                className="grid grid-cols-1 md:grid-cols-3 gap-4"
+              >
+                {visibleProjects.map((project) => (
+                  <a
+                    key={project.title}
+                    href={project.link}
+                    target={project.link !== "#" ? "_blank" : undefined}
+                    rel={project.link !== "#" ? "noopener noreferrer" : undefined}
+                    className="aspect-[4/3] rounded-2xl bg-card border border-border hover:border-muted-foreground/30 transition-all duration-300 relative overflow-hidden group hover:scale-[1.02] hover:shadow-lg"
+                  >
+                    <ImageWithSkeleton
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
+                    <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                      <span className="font-mono text-sm text-white bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full">
+                        {project.title}
+                      </span>
+                    </div>
+                  </a>
+                ))}
+              </motion.div>
+            </AnimatePresence>
 
-          {/* Steel Stallion */}
-          <a
-            href="https://steelstallion.netlify.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="aspect-[4/3] rounded-2xl bg-card border border-border hover:border-muted-foreground/30 transition-all duration-300 relative overflow-hidden group hover:scale-[1.02] hover:shadow-lg"
-          >
-            <ImageWithSkeleton src="/Projects/2.png" alt="Steel Stallion" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
-            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all duration-300" />
-            <div className="absolute bottom-4 left-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <span className="font-mono text-sm text-white bg-black/50 backdrop-blur-sm px-3 py-1 rounded-full">Steel Stallion</span>
-            </div>
-          </a>
-
-          {/* View All Projects */}
-          <a
-            href="#projects"
-            className="aspect-[4/3] rounded-2xl bg-card border border-border hover:border-muted-foreground/30 transition-all duration-300 relative overflow-hidden group hover:scale-[1.02] hover:shadow-lg hover:bg-muted/50"
-          >
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="font-mono text-sm text-muted-foreground group-hover:text-foreground transition-colors duration-300">View All</span>
-            </div>
-            <div className="absolute bottom-4 right-4 w-12 h-12 rounded-full border border-border bg-background/50 backdrop-blur-sm flex items-center justify-center group-hover:bg-foreground group-hover:text-background transition-all duration-300 group-hover:scale-110">
-              <ArrowRight className="w-5 h-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </div>
-          </a>
+            {/* Navigation Buttons */}
+            {totalPages > 1 && (
+              <div className="flex items-center justify-center gap-4 mt-6">
+                <button
+                  onClick={prevPage}
+                  className="w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:bg-secondary transition-colors"
+                  aria-label="Previous projects"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <div className="flex gap-2">
+                  {Array.from({ length: totalPages }).map((_, i) => (
+                    <button
+                      key={i}
+                      onClick={() => setProjectPage(i)}
+                      className={`w-2 h-2 rounded-full transition-colors ${
+                        i === projectPage ? "bg-foreground" : "bg-muted-foreground/30"
+                      }`}
+                      aria-label={`Go to page ${i + 1}`}
+                    />
+                  ))}
+                </div>
+                <button
+                  onClick={nextPage}
+                  className="w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:bg-secondary transition-colors"
+                  aria-label="Next projects"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
+            )}
+          </div>
         </motion.div>
       </div>
 
