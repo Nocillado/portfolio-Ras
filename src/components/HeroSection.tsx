@@ -1,6 +1,6 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { Button } from "./ui/button";
+import { MagneticButton } from "./ui/magnetic-button";
 import { ImageWithSkeleton } from "./ui/image-skeleton";
 import { useState, useEffect } from "react";
 
@@ -93,12 +93,12 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="flex items-center gap-4"
             >
-              <Button variant="hero" size="lg" className="group" asChild>
+              <MagneticButton variant="hero" size="lg" className="group" asChild>
                 <a href="#projects">
                   Projects
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
-              </Button>
+              </MagneticButton>
             </motion.div>
 
             <motion.div
@@ -131,12 +131,12 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex lg:hidden items-center gap-4"
           >
-            <Button variant="hero" size="lg" className="group" asChild>
+            <MagneticButton variant="hero" size="lg" className="group" asChild>
               <a href="#projects">
                 Projects
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
-            </Button>
+            </MagneticButton>
           </motion.div>
         </div>
 

@@ -60,11 +60,11 @@ export function ThemeToggle() {
         className="fixed top-6 right-6 z-50"
       >
         <Button
-          variant="outline"
+          variant="icon"
           size="icon"
           onClick={toggleTheme}
           disabled={isAnimating}
-          className="relative h-10 w-10 rounded-full border-border bg-card/80 backdrop-blur-sm hover:bg-card transition-colors"
+          className="relative h-10 w-10 rounded-full border-border bg-card/80 backdrop-blur-sm hover:rounded-full [&_svg]:text-foreground [&:hover_svg]:text-white dark:[&:hover_svg]:text-black"
         >
           <AnimatePresence mode="wait" initial={false}>
             {theme === "dark" ? (
