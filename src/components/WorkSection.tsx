@@ -43,20 +43,20 @@ const WorkSection = () => {
               whileHover="hover"
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="border-t border-border last:border-b py-6 grid grid-cols-12 gap-4 items-center cursor-pointer px-4 -mx-4 group hover:bg-[#f5f5f5] transition-all duration-200"
+              className="border-t border-border last:border-b py-6 grid grid-cols-12 gap-4 items-center cursor-pointer px-4 -mx-4 group hover:bg-[#0a0a0a] dark:hover:bg-[#f5f5f5] hover:shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-200"
             >
               <div className="col-span-3 md:col-span-2">
-                <p className="font-mono text-sm group-hover:text-black transition-colors duration-200">{work.period}</p>
-                <p className="text-xs text-muted-foreground group-hover:text-black/60 transition-colors duration-200">{work.duration}</p>
+                <p className="font-mono text-sm group-hover:text-white dark:group-hover:text-black transition-colors duration-200">{work.period}</p>
+                <p className="text-xs text-muted-foreground group-hover:text-white/60 dark:group-hover:text-black/60 transition-colors duration-200">{work.duration}</p>
               </div>
 
               <div className="col-span-3 md:col-span-2">
-                <p className="font-mono text-sm group-hover:text-black transition-colors duration-200">{work.company}</p>
+                <p className="font-mono text-sm group-hover:text-white dark:group-hover:text-black transition-colors duration-200">{work.company}</p>
               </div>
 
               <div className="col-span-6 md:col-span-8">
-                <p className="text-sm text-muted-foreground group-hover:text-black/60 transition-colors duration-200">
-                  {work.role} <span className="text-foreground group-hover:text-black transition-colors duration-200">|</span> {work.tech}
+                <p className="text-sm text-muted-foreground group-hover:text-white/60 dark:group-hover:text-black/60 transition-colors duration-200">
+                  {work.role} <span className="text-foreground group-hover:text-white dark:group-hover:text-black transition-colors duration-200">|</span> {work.tech}
                 </p>
               </div>
             </motion.div>

@@ -36,12 +36,12 @@ const SkillsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="col-span-12 md:col-span-7 bg-card border border-border rounded-xl p-6 cursor-pointer group hover:bg-[#f5f5f5] transition-all duration-200"
+            className="col-span-12 md:col-span-7 bg-card border border-border rounded-xl p-6 cursor-pointer group hover:bg-[#0a0a0a] dark:hover:bg-[#f5f5f5] hover:shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-200"
           >
-            <h3 className="font-mono text-lg mb-3 group-hover:text-black transition-colors duration-200">
+            <h3 className="font-mono text-lg mb-3 group-hover:text-white dark:group-hover:text-black transition-colors duration-200">
               {skillCategories[0].title}
             </h3>
-            <p className="text-sm text-muted-foreground group-hover:text-black/60 transition-colors duration-200">
+            <p className="text-sm text-muted-foreground group-hover:text-white/60 dark:group-hover:text-black/60 transition-colors duration-200">
               {skillCategories[0].skills.join(" / ")}
             </p>
           </motion.div>
@@ -52,18 +52,18 @@ const SkillsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="col-span-12 md:col-span-5 row-span-2 bg-card border border-border rounded-xl p-6 cursor-pointer group hover:bg-[#f5f5f5] transition-all duration-200 flex flex-col"
+            className="col-span-12 md:col-span-5 row-span-2 bg-card border border-border rounded-xl p-6 cursor-pointer group hover:bg-[#0a0a0a] dark:hover:bg-[#f5f5f5] hover:shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-200 flex flex-col"
           >
-            <h3 className="font-mono text-lg mb-3 group-hover:text-black transition-colors duration-200">
+            <h3 className="font-mono text-lg mb-3 group-hover:text-white dark:group-hover:text-black transition-colors duration-200">
               {skillCategories[1].title}
             </h3>
-            <p className="text-sm text-muted-foreground group-hover:text-black/60 transition-colors duration-200 flex-1">
+            <p className="text-sm text-muted-foreground group-hover:text-white/60 dark:group-hover:text-black/60 transition-colors duration-200 flex-1">
               {skillCategories[1].skills.join(" / ")}
             </p>
             {/* Action button */}
             <div className="flex justify-end mt-4">
-              <a href="#contact" className="w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center transition-all duration-200 group-hover:bg-black group-hover:border-black">
-                <MessageSquare className="w-4 h-4 transition-colors duration-200 group-hover:text-white" />
+              <a href="#contact" className="w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center transition-all duration-200 group-hover:bg-white group-hover:border-white dark:group-hover:bg-black dark:group-hover:border-black">
+                <MessageSquare className="w-4 h-4 transition-colors duration-200 group-hover:text-black dark:group-hover:text-white" />
               </a>
             </div>
           </motion.div>
@@ -87,12 +87,12 @@ const SkillsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.3 }}
-            className="col-span-12 md:col-span-7 bg-card border border-border rounded-xl p-6 cursor-pointer group hover:bg-[#f5f5f5] transition-all duration-200"
+            className="col-span-12 md:col-span-7 bg-card border border-border rounded-xl p-6 cursor-pointer group hover:bg-[#0a0a0a] dark:hover:bg-[#f5f5f5] hover:shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-200"
           >
-            <h3 className="font-mono text-lg mb-3 group-hover:text-black transition-colors duration-200">
+            <h3 className="font-mono text-lg mb-3 group-hover:text-white dark:group-hover:text-black transition-colors duration-200">
               {skillCategories[2].title}
             </h3>
-            <p className="text-sm text-muted-foreground group-hover:text-black/60 transition-colors duration-200">
+            <p className="text-sm text-muted-foreground group-hover:text-white/60 dark:group-hover:text-black/60 transition-colors duration-200">
               {skillCategories[2].skills.join(" / ")}
             </p>
           </motion.div>
@@ -103,12 +103,12 @@ const SkillsSection = () => {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.4 }}
-            className="col-span-12 md:col-span-5 bg-card border border-border rounded-xl p-6 cursor-pointer group hover:bg-[#f5f5f5] transition-all duration-200"
+            className="col-span-12 md:col-span-5 bg-card border border-border rounded-xl p-6 cursor-pointer group hover:bg-[#0a0a0a] dark:hover:bg-[#f5f5f5] hover:shadow-[0_0_30px_rgba(0,0,0,0.5)] transition-all duration-200"
           >
-            <h3 className="font-mono text-lg mb-3 group-hover:text-black transition-colors duration-200">
+            <h3 className="font-mono text-lg mb-3 group-hover:text-white dark:group-hover:text-black transition-colors duration-200">
               {skillCategories[3].title}
             </h3>
-            <p className="text-sm text-muted-foreground group-hover:text-black/60 transition-colors duration-200">
+            <p className="text-sm text-muted-foreground group-hover:text-white/60 dark:group-hover:text-black/60 transition-colors duration-200">
               {skillCategories[3].skills.join(" / ")}
             </p>
           </motion.div>
