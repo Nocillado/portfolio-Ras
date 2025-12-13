@@ -1,25 +1,46 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { ArrowLeft, ArrowUpRight, MessageSquare, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ImageWithSkeleton } from "@/components/ui/image-skeleton";
 import { projects, getProjectById } from "@/data/projects";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const project = id ? getProjectById(id) : undefined;
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   // Find adjacent projects for navigation
   const currentIndex = projects.findIndex((p) => p.id === id);
   const prevProject = currentIndex > 0 ? projects[currentIndex - 1] : null;
   const nextProject = currentIndex < projects.length - 1 ? projects[currentIndex + 1] : null;
 
+  // Reset image index when project changes
+  useEffect(() => {
+    setCurrentImageIndex(0);
+  }, [id]);
+
   // Scroll to top on mount
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
+
+  // Combine main image with gallery images
+  const allImages = project ? [project.image, ...(project.images || [])] : [];
+
+  const nextImage = () => {
+    if (allImages.length > 1) {
+      setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
+    }
+  };
+
+  const prevImage = () => {
+    if (allImages.length > 1) {
+      setCurrentImageIndex((prev) => (prev - 1 + allImages.length) % allImages.length);
+    }
+  };
 
   if (!project) {
     return (
@@ -84,7 +105,7 @@ const ProjectDetail = () => {
             ))}
           </motion.div>
 
-          {/* Project Image */}
+          {/* Project Images Slider */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
@@ -104,16 +125,70 @@ const ProjectDetail = () => {
 
             {/* Image container with z-10 to stay in front */}
             <div className="relative z-10 aspect-video rounded-3xl bg-card border border-border overflow-hidden shadow-2xl">
-              {project.image ? (
-                <ImageWithSkeleton
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <div className="w-full h-full bg-gradient-to-br from-card to-muted" />
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={currentImageIndex}
+                  initial={{ opacity: 0, x: 20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -20 }}
+                  transition={{ duration: 0.3 }}
+                  className="w-full h-full"
+                >
+                  <ImageWithSkeleton
+                    src={allImages[currentImageIndex]}
+                    alt={`${project.title} screenshot ${currentImageIndex + 1}`}
+                    className="w-full h-full object-cover"
+                  />
+                </motion.div>
+              </AnimatePresence>
+
+              {/* Navigation Arrows */}
+              {allImages.length > 1 && (
+                <>
+                  <button
+                    onClick={prevImage}
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-border bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-[#0a0a0a] hover:border-[#0a0a0a] dark:hover:bg-[#f5f5f5] dark:hover:border-[#f5f5f5] hover:text-white dark:hover:text-black transition-all duration-200 z-20"
+                    aria-label="Previous image"
+                  >
+                    <ChevronLeft className="w-6 h-6" />
+                  </button>
+                  <button
+                    onClick={nextImage}
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full border border-border bg-background/80 backdrop-blur-sm flex items-center justify-center hover:bg-[#0a0a0a] hover:border-[#0a0a0a] dark:hover:bg-[#f5f5f5] dark:hover:border-[#f5f5f5] hover:text-white dark:hover:text-black transition-all duration-200 z-20"
+                    aria-label="Next image"
+                  >
+                    <ChevronRight className="w-6 h-6" />
+                  </button>
+                </>
               )}
             </div>
+
+            {/* Dot indicators */}
+            {allImages.length > 1 && (
+              <div className="flex items-center justify-center gap-2 mt-6">
+                {allImages.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      index === currentImageIndex
+                        ? "bg-foreground w-6"
+                        : "bg-muted-foreground/30 hover:bg-muted-foreground/50"
+                    }`}
+                    aria-label={`Go to image ${index + 1}`}
+                  />
+                ))}
+              </div>
+            )}
+
+            {/* Image counter */}
+            {allImages.length > 1 && (
+              <div className="text-center mt-4">
+                <span className="font-mono text-sm text-muted-foreground">
+                  {currentImageIndex + 1} / {allImages.length}
+                </span>
+              </div>
+            )}
           </motion.div>
         </div>
       </section>

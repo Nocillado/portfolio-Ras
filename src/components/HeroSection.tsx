@@ -9,6 +9,7 @@ import { useState, useEffect } from "react";
 const heroProjects = [
   { title: "Resident Evil 8", image: "/Projects/3.png", link: "https://resident-evil-8-one.vercel.app/" },
   { title: "Montclair", image: "/Projects/1.png", link: "https://montclair-jet.vercel.app/" },
+  { title: "EGS Entreprenør AS", image: "/Projects/6.png", link: "https://egs-entreprenor-as.vercel.app/" },
   { title: "Steel Stallion", image: "/Projects/2.png", link: "https://steel-stallion.vercel.app/" },
   { title: "Marilag", image: "/Projects/4.png", link: "https://marilag-eta.vercel.app/" },
   { title: "Brussels Brewery", image: "/Projects/5 .png", link: "https://brussels-brewery.vercel.app/" },

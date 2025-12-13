@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowUpRight, MessageSquare } from "lucide-react";
+import { ArrowUpRight, Github } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Button } from "./ui/button";
 import { ImageWithSkeleton } from "./ui/image-skeleton";
@@ -126,10 +126,12 @@ const ProjectsSection = () => {
                 {/* Action buttons */}
                 <div className="flex items-center gap-2 mt-8">
                   <a
-                    href="#contact"
+                    href="https://github.com/Nocillado"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="w-10 h-10 rounded-full border border-border bg-background flex items-center justify-center hover:bg-[#0a0a0a] hover:border-[#0a0a0a] dark:hover:bg-[#f5f5f5] dark:hover:border-[#f5f5f5] hover:text-white dark:hover:text-black transition-all duration-200"
                   >
-                    <MessageSquare className="w-4 h-4" />
+                    <Github className="w-4 h-4" />
                   </a>
                   {project.link && (
                     <a
