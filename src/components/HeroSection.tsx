@@ -1,8 +1,9 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
-import { MagneticButton } from "./ui/magnetic-button";
+import { Button } from "./ui/button";
 import { ImageWithSkeleton } from "./ui/image-skeleton";
 import { MeteorShower } from "./ui/meteor-shower";
+import { InteractiveParticles } from "./ui/interactive-particles";
 import { useState, useEffect } from "react";
 
 const heroProjects = [
@@ -44,6 +45,9 @@ const HeroSection = () => {
     <section id="home" className="relative min-h-screen flex items-center px-6 md:px-12 pt-24 overflow-hidden">
       {/* Cosmic Meteor Shower */}
       <MeteorShower />
+
+      {/* Interactive Particle Physics */}
+      <InteractiveParticles />
 
       <div className="max-w-7xl mx-auto w-full relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
@@ -97,12 +101,12 @@ const HeroSection = () => {
               transition={{ duration: 0.8, delay: 0.3 }}
               className="flex items-center gap-4"
             >
-              <MagneticButton variant="hero" size="lg" className="group" asChild>
+              <Button variant="hero" size="lg" className="group" asChild>
                 <a href="#projects">
                   Projects
                   <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </a>
-              </MagneticButton>
+              </Button>
             </motion.div>
 
             <motion.div
@@ -135,12 +139,12 @@ const HeroSection = () => {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="flex lg:hidden items-center gap-4"
           >
-            <MagneticButton variant="hero" size="lg" className="group" asChild>
+            <Button variant="hero" size="lg" className="group" asChild>
               <a href="#projects">
                 Projects
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </a>
-            </MagneticButton>
+            </Button>
           </motion.div>
         </div>
 
